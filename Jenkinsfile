@@ -3,8 +3,24 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git credentialsId: 'd6f0e3e2-9974-4f3f-83f5-00cd6296179c', branch: 'main', url: 'https://github.com/meghanavalluri02/Jenkins.git'
+                git branch: 'main', url: 'https://github.com/meghanavalluri02/Jenkins.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Building the project...'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying the application...'
             }
         }
     }
 }
+
